@@ -37,7 +37,7 @@ def test_func_annotations(module, skiplist=None):
     failures = []
 
     def is_function(func):
-        """Return True only for objects (funcs) we wish to check"""
+        """Return True only for objects (i.e, functions) we wish to check"""
         return isfunction(func) and func.__name__ not in skip_list
 
     def check_annotations(func):
