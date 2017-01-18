@@ -42,7 +42,9 @@ def test_func_annotations(module, skiplist=None):
 
     def check_annotations(func):
         """Raises AssertionError if args and return value are not annotated."""
-        argspec = set(getfullargspec(func).args)
+        argspec = set(
+            getfullargspec(func).args  # pylint: disable=deprecated-method
+        )
         argspec.add('return')
         annotations = set(func.__annotations__)
         if not argspec == annotations:
